@@ -4,9 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class InputRecover : MonoBehaviour
 {
+  public delegate void manage();
+  public delegate void message(string mes);
+  public event manage connect;
+  public event message send;
   public static int usersCount;
   public static string userName;
   public static string hallCode;
@@ -52,5 +57,10 @@ public class InputRecover : MonoBehaviour
     }
     hallCode = new string(charArr);
     Debug.Log("El  codigo de la sala es: " + hallCode);
+    if (userName != null && userName != "") {
+      SceneManager.LoadScene(1);
+      connect();
+    }
+    send("Debe escribir un nombre de usuario.");
   }
 }

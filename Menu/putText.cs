@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class putText : MonoBehaviour
 {
   public LevelManager deleg;
+  public InputRecover receive;
   void Start()
   {
 
@@ -14,6 +15,7 @@ public class putText : MonoBehaviour
   void Update()
   {
     deleg.showText += write;
+    receive.send += write;
   }
 
   private void write(string mes) {

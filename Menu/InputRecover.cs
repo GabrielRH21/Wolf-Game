@@ -28,7 +28,9 @@ public class InputRecover : MonoBehaviour
 
   void Update()
   {
-
+    if (Input.GetKey("escape")){
+      Application.Quit();
+    }
   }
 
   public void OnNumberEntered(string answer)

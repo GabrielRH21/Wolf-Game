@@ -20,6 +20,7 @@ namespace Cainos.PixelArtTopDown_Basic // Asegúrate de que el namespace coincid
         public GameObject textPrefab;
         private Text playerNameText;
         public static bool flagInstanced = false;
+        private string role = "noRole";
 
         private void Awake()
         {
